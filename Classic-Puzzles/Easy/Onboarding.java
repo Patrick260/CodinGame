@@ -13,10 +13,10 @@ final class Player {
 
         while (true) {
 
-            String enemy1 = input.next();
-            int dist1 = input.nextInt();
-            String enemy2 = input.next();
-            int dist2 = input.nextInt();
+            final String enemy1 = input.next();
+            final int dist1 = input.nextInt();
+            final String enemy2 = input.next();
+            final int dist2 = input.nextInt();
 
             System.out.println(dist1 < dist2 ? enemy1 : enemy2);
 
