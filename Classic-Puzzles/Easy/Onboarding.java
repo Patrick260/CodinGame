@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 final class Player {
 
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
 
         final Scanner input = new Scanner(System.in);
 
