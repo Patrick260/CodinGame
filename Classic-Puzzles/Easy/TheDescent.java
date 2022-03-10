@@ -18,7 +18,7 @@ final class Player {
 
             for (int i = 0; i < 8; i++) {
 
-                int mountain_height = input.nextInt();
+                final int mountain_height = input.nextInt();
                 
                 if (mountain_height > highest_mountain) {
 
