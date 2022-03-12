@@ -11,38 +11,38 @@ final class Player {
     public static void main(final String[] args) {
 
         final Scanner input = new Scanner(System.in);
-        
-        final int amount_floors = input.nextInt();
+
+        final int amountFloors = input.nextInt();
         final int width = input.nextInt();
-        final int amount_rounds = input.nextInt();
-        final int exit_floor = input.nextInt();
-        final int exit_position = input.nextInt();
-        final int amount_clones = input.nextInt();
-        final int amount_additional_elevators = input.nextInt();
-        final int amount_elevators = input.nextInt();
+        final int amountRounds = input.nextInt();
+        final int exitFloor = input.nextInt();
+        final int exitPosition = input.nextInt();
+        final int amountClones = input.nextInt();
+        final int amountAdditionalElevators = input.nextInt();
+        final int amountElevators = input.nextInt();
 
         final HashMap<Integer, Integer> elevators = new HashMap<>();
 
-        for (int i = 0; i < amount_elevators; i++) {
+        for (int i = 0; i < amountElevators; i++) {
 
-            final int elevator_floor = input.nextInt();
-            final int elevator_position = input.nextInt();
+            final int elevatorFloor = input.nextInt();
+            final int elevatorPosition = input.nextInt();
 
-            elevators.put(elevator_floor, elevator_position);
+            elevators.put(elevatorFloor, elevatorPosition);
 
         }
 
-        elevators.put(exit_floor, exit_position);
+        elevators.put(exitFloor, exitPosition);
 
         while (true) {
 
-            final int clone_floor = input.nextInt();
-            final int clone_position = input.nextInt();
+            final int cloneFloor = input.nextInt();
+            final int clonePosition = input.nextInt();
             final String direction = input.next();
 
             if (direction.equals("LEFT")) {
 
-                if (clone_position >= elevators.get(clone_floor)) {
+                if (clonePosition >= elevators.get(cloneFloor)) {
 
                     System.out.println("WAIT");
 
@@ -54,7 +54,7 @@ final class Player {
 
             } else if (direction.equals("RIGHT")) {
 
-                if (clone_position <= elevators.get(clone_floor)) {
+                if (clonePosition <= elevators.get(cloneFloor)) {
 
                     System.out.println("WAIT");
 
