@@ -9,12 +9,13 @@ final class Player {
 
     public static void main(final String[] args) {
 
-        final Scanner in = new Scanner(System.in);
-        final int lx = in.nextInt();
-        final int ly = in.nextInt();
+        final Scanner input = new Scanner(System.in);
 
-        int tx = in.nextInt();
-        int ty = in.nextInt();
+        final int lx = input.nextInt();
+        final int ly = input.nextInt();
+
+        int tx = input.nextInt();
+        int ty = input.nextInt();
 
         while (true) {
 
