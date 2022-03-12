@@ -17,53 +17,53 @@ final class Player {
             final HashMap<Integer, String> humans = new HashMap<>();
             final HashMap<Integer, String> zombies = new HashMap<>();
 
-            String nearest_zombie_to_human = "0 0";
-            double distance_nearest_zombie_to_human = Double.MAX_VALUE;
+            String nearestZombieToHuman = "0 0";
+            double distanceNearestZombieToHuman = Double.MAX_VALUE;
 
             final int x = input.nextInt();
             final int y = input.nextInt();
 
-            final int human_count = input.nextInt();
+            final int humanCount = input.nextInt();
 
-            for (int i = 0; i < human_count; i++) {
+            for (int i = 0; i < humanCount; i++) {
 
-                final int human_id = input.nextInt();
-                final int human_x = input.nextInt();
-                final int human_y = input.nextInt();
+                final int humanId = input.nextInt();
+                final int humanX = input.nextInt();
+                final int humanY = input.nextInt();
 
-                humans.put(human_id, human_x + " " + human_y);
-
-            }
-
-            final int zombie_count = input.nextInt();
-
-            for (int i = 0; i < zombie_count; i++) {
-
-                final int zombie_id = input.nextInt();
-                final int zombie_x = input.nextInt();
-                final int zombie_y = input.nextInt();
-                final int zombie_x_next = input.nextInt();
-                final int zombie_y_next = input.nextInt();
-
-                zombies.put(zombie_id, zombie_x + " " + zombie_y);
+                humans.put(humanId, humanX + " " + humanY);
 
             }
 
-            for (final String zombie_position : zombies.values()) {
+            final int zombieCount = input.nextInt();
 
-                for (final String human_position : humans.values()) {
+            for (int i = 0; i < zombieCount; i++) {
 
-                    final double distance = Math.hypot(Math.abs(Integer.parseInt(zombie_position.split(" ")[0]) -
-                                                                    Integer.parseInt(human_position.split(" ")[0])),
-                                                        Math.abs(Integer.parseInt(zombie_position.split(" ")[1]) -
-                                                                    Integer.parseInt(human_position.split(" ")[1])));
+                final int zombieId = input.nextInt();
+                final int zombieX = input.nextInt();
+                final int zombieY = input.nextInt();
+                final int zombieNextX = input.nextInt();
+                final int zombieNextY = input.nextInt();
 
-                    if (distance < distance_nearest_zombie_to_human) {
+                zombies.put(zombieId, zombieX + " " + zombieY);
 
-                        if (isPossibleToSaveHuman(distance, zombie_position, x + " " + y)) {
+            }
 
-                            nearest_zombie_to_human = zombie_position;
-                            distance_nearest_zombie_to_human = distance;
+            for (final String zombiePosition : zombies.values()) {
+
+                for (final String humanPosition : humans.values()) {
+
+                    final double distance = Math.hypot(Math.abs(Integer.parseInt(zombiePosition.split(" ")[0]) -
+                                                                    Integer.parseInt(humanPosition.split(" ")[0])),
+                                                        Math.abs(Integer.parseInt(zombiePosition.split(" ")[1]) -
+                                                                    Integer.parseInt(humanPosition.split(" ")[1])));
+
+                    if (distance < distanceNearestZombieToHuman) {
+
+                        if (isPossibleToSaveHuman(distance, zombiePosition, x + " " + y)) {
+
+                            nearestZombieToHuman = zombiePosition;
+                            distanceNearestZombieToHuman = distance;
 
                         }
 
@@ -73,30 +73,30 @@ final class Player {
 
             }
 
-            System.out.println(nearest_zombie_to_human);
+            System.out.println(nearestZombieToHuman);
 
         }
 
     }
 
 
-    private static boolean isPossibleToSaveHuman(double distance_zombie_to_human, final String zombie_position, final String player_position) {
+    private static boolean isPossibleToSaveHuman(double distanceZombieToHuman, final String zombiePosition, final String playerPosition) {
 
-        double distance_player_to_zombie = Math.hypot(Math.abs(Integer.parseInt(player_position.split(" ")[0]) -
-                                                                    Integer.parseInt(zombie_position.split(" ")[0])),
-                                                        Math.abs(Integer.parseInt(player_position.split(" ")[1]) -
-                                                                    Integer.parseInt(zombie_position.split(" ")[1])));
+        double distancePlayerToZombie = Math.hypot(Math.abs(Integer.parseInt(playerPosition.split(" ")[0]) -
+                                                                    Integer.parseInt(zombiePosition.split(" ")[0])),
+                                                        Math.abs(Integer.parseInt(playerPosition.split(" ")[1]) -
+                                                                    Integer.parseInt(zombiePosition.split(" ")[1])));
 
-        while (distance_zombie_to_human >= 0) {
+        while (distanceZombieToHuman >= 0) {
 
-            distance_zombie_to_human -= 400;
-            distance_player_to_zombie -= 1000;
+            distanceZombieToHuman -= 400;
+            distancePlayerToZombie -= 1000;
 
-            if (distance_player_to_zombie <= 2000) {
+            if (distancePlayerToZombie <= 2000) {
 
                 return true;
 
-            } else if (distance_zombie_to_human <= 400) {
+            } else if (distanceZombieToHuman <= 400) {
 
                 return false;
 
