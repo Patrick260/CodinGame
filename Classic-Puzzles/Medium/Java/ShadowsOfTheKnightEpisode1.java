@@ -9,32 +9,33 @@ final class Player {
 
     public static void main(final String[] args) {
 
-        final Scanner in = new Scanner(System.in);
-        final int W = in.nextInt();
-        final int H = in.nextInt();
-        final int N = in.nextInt();
+        final Scanner input = new Scanner(System.in);
 
-        int X0 = in.nextInt();
-        int Y0 = in.nextInt();
+        final int w = input.nextInt();
+        final int h = input.nextInt();
+        final int n = input.nextInt();
 
-        int L = 0;
-        int R = W - 1;
-        int T = 0;
-        int B = H - 1;
+        int x0 = input.nextInt();
+        int y0 = input.nextInt();
+
+        int l = 0;
+        int r = w - 1;
+        int t = 0;
+        int b = h - 1;
 
         while (true) {
 
-            final String bombDir = in.next();
+            final String bombDir = input.next();
 
-            if (bombDir.contains("U")) { B = Y0 - 1; }
-            if (bombDir.contains("R")) { L = X0 + 1; }
-            if (bombDir.contains("D")) { T = Y0 + 1; }
-            if (bombDir.contains("L")) { R = X0 - 1; }
+            if (bombDir.contains("U")) { b = y0 - 1; }
+            if (bombDir.contains("R")) { l = x0 + 1; }
+            if (bombDir.contains("D")) { t = y0 + 1; }
+            if (bombDir.contains("L")) { r = x0 - 1; }
 
-            X0 = (R + L) / 2;
-            Y0 = (T + B) / 2;
+            x0 = (r + l) / 2;
+            y0 = (t + b) / 2;
 
-            System.out.println(X0 + " " + Y0);
+            System.out.println(x0 + " " + y0);
 
         }
 
