@@ -13,16 +13,16 @@ final class Player {
 
         while (true) {
 
-            int highest_mountain = 0;
+            int highestMountain = 0;
             int index = 0;
 
             for (int i = 0; i < 8; i++) {
 
-                final int mountain_height = input.nextInt();
+                final int mountainHeight = input.nextInt();
                 
-                if (mountain_height > highest_mountain) {
+                if (mountainHeight > highestMountain) {
 
-                    highest_mountain = mountain_height;
+                    highestMountain = mountainHeight;
                     index = i;
 
                 }
