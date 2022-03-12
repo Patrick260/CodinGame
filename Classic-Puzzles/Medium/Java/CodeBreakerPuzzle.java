@@ -9,26 +9,27 @@ final class Solution {
 
     public static void main(final String[] args) {
 
-        final Scanner in = new Scanner(System.in);
-        final String ALPHABET = in.nextLine();
-        final String MESSAGE = in.nextLine();
-        final String WORD = in.nextLine();
+        final Scanner input = new Scanner(System.in);
 
-        for (int multiply = 0; multiply < ALPHABET.length(); multiply++) {
+        final String alphabet = input.nextLine();
+        final String message = input.nextLine();
+        final String word = input.nextLine();
 
-            for (int shift = 0; shift < ALPHABET.length(); shift++) {
+        for (int multiply = 0; multiply < alphabet.length(); multiply++) {
 
-                final Character[] decode = new Character[MESSAGE.length()];
+            for (int shift = 0; shift < alphabet.length(); shift++) {
 
-                for (int map_from = 0; map_from < ALPHABET.length(); map_from++) {
+                final Character[] decode = new Character[message.length()];
 
-                    final int map_to = ((map_from + shift) * multiply) % ALPHABET.length();
+                for (int map_from = 0; map_from < alphabet.length(); map_from++) {
 
-                    for (int i = 0; i < MESSAGE.length(); i++) {
+                    final int map_to = ((map_from + shift) * multiply) % alphabet.length();
 
-                        if (MESSAGE.charAt(i) == ALPHABET.charAt(map_from)) {
+                    for (int i = 0; i < message.length(); i++) {
 
-                            decode[i] = ALPHABET.charAt(map_to);
+                        if (message.charAt(i) == alphabet.charAt(map_from)) {
+
+                            decode[i] = alphabet.charAt(map_to);
 
                         }
 
@@ -44,7 +45,7 @@ final class Solution {
 
                 }
 
-                if (msg.toString().contains(WORD)) {
+                if (msg.toString().contains(word)) {
 
                     System.out.println(msg);
 
