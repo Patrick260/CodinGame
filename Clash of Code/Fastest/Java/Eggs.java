@@ -11,9 +11,10 @@ final class Solution {
 
         final Scanner input = new Scanner(System.in);
 
-        input.nextInt();
+        final int n = input.nextInt();
+        final int m = input.nextInt();
 
-        System.out.println(input.nextInt());
+        System.out.println(Math.min(n, m));
 
     }
 
