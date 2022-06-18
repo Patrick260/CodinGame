@@ -4,6 +4,7 @@
 */
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 final class Player {
@@ -14,8 +15,8 @@ final class Player {
 
         while (true) {
 
-            final HashMap<Integer, String> humans = new HashMap<>();
-            final HashMap<Integer, String> zombies = new HashMap<>();
+            final Map<Integer, String> humans = new HashMap<>();
+            final Map<Integer, String> zombies = new HashMap<>();
 
             String nearestZombieToHuman = "0 0";
             double distanceNearestZombieToHuman = Double.MAX_VALUE;
@@ -54,9 +55,9 @@ final class Player {
                 for (final String humanPosition : humans.values()) {
 
                     final double distance = Math.hypot(Math.abs(Integer.parseInt(zombiePosition.split(" ")[0]) -
-                                                                    Integer.parseInt(humanPosition.split(" ")[0])),
-                                                        Math.abs(Integer.parseInt(zombiePosition.split(" ")[1]) -
-                                                                    Integer.parseInt(humanPosition.split(" ")[1])));
+                                    Integer.parseInt(humanPosition.split(" ")[0])),
+                            Math.abs(Integer.parseInt(zombiePosition.split(" ")[1]) -
+                                    Integer.parseInt(humanPosition.split(" ")[1])));
 
                     if (distance < distanceNearestZombieToHuman) {
 
@@ -80,12 +81,13 @@ final class Player {
     }
 
 
-    private static boolean isPossibleToSaveHuman(double distanceZombieToHuman, final String zombiePosition, final String playerPosition) {
+    private static boolean isPossibleToSaveHuman(double distanceZombieToHuman, final String zombiePosition,
+                                                 final String playerPosition) {
 
         double distancePlayerToZombie = Math.hypot(Math.abs(Integer.parseInt(playerPosition.split(" ")[0]) -
-                                                                    Integer.parseInt(zombiePosition.split(" ")[0])),
-                                                        Math.abs(Integer.parseInt(playerPosition.split(" ")[1]) -
-                                                                    Integer.parseInt(zombiePosition.split(" ")[1])));
+                        Integer.parseInt(zombiePosition.split(" ")[0])),
+                Math.abs(Integer.parseInt(playerPosition.split(" ")[1]) -
+                        Integer.parseInt(zombiePosition.split(" ")[1])));
 
         while (distanceZombieToHuman >= 0) {
 
