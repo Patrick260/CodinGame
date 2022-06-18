@@ -21,15 +21,15 @@ final class Solution {
 
                 final Character[] decode = new Character[message.length()];
 
-                for (int map_from = 0; map_from < alphabet.length(); map_from++) {
+                for (int mapFrom = 0; mapFrom < alphabet.length(); mapFrom++) {
 
-                    final int map_to = ((map_from + shift) * multiply) % alphabet.length();
+                    final int mapTo = ((mapFrom + shift) * multiply) % alphabet.length();
 
                     for (int i = 0; i < message.length(); i++) {
 
-                        if (message.charAt(i) == alphabet.charAt(map_from)) {
+                        if (message.charAt(i) == alphabet.charAt(mapFrom)) {
 
-                            decode[i] = alphabet.charAt(map_to);
+                            decode[i] = alphabet.charAt(mapTo);
 
                         }
 
