@@ -18,22 +18,22 @@ final class Player {
         int x0 = input.nextInt();
         int y0 = input.nextInt();
 
-        int l = 0;
-        int r = w - 1;
-        int t = 0;
-        int b = h - 1;
+        int left = 0;
+        int right = w - 1;
+        int top = 0;
+        int bottom = h - 1;
 
         while (true) {
 
             final String bombDir = input.next();
 
-            if (bombDir.contains("U")) { b = y0 - 1; }
-            if (bombDir.contains("R")) { l = x0 + 1; }
-            if (bombDir.contains("D")) { t = y0 + 1; }
-            if (bombDir.contains("L")) { r = x0 - 1; }
+            if (bombDir.contains("U")) { bottom = y0 - 1; }
+            if (bombDir.contains("R")) { left = x0 + 1; }
+            if (bombDir.contains("D")) { top = y0 + 1; }
+            if (bombDir.contains("L")) { right = x0 - 1; }
 
-            x0 = (r + l) / 2;
-            y0 = (t + b) / 2;
+            x0 = (right + left) / 2;
+            y0 = (top + bottom) / 2;
 
             System.out.println(x0 + " " + y0);
 
