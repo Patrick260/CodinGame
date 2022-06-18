@@ -58,7 +58,7 @@ final class Player {
 
                     }
 
-                    for (int y = y1 + 1 ; y < cells.length; y++) {
+                    for (int y = y1 + 1; y < cells.length; y++) {
 
                         if (cells[y][x1] == '0') {
 
