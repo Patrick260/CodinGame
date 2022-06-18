@@ -22,7 +22,8 @@ final class Solution {
 
             if (temperature > 0) {
 
-                if (temperature * temperature <= nearestNumberInPos * nearestNumberInPos || temperature == temperature * 2) {
+                if (temperature * temperature <= nearestNumberInPos * nearestNumberInPos
+                        || temperature == temperature << 1) {
 
                     nearestNumberInPos = temperature;
 
@@ -42,19 +43,19 @@ final class Solution {
 
         if (nearestNumberInPos != 9999 || nearestNumberInNeg != -9999) {
 
-            if (nearestNumberInNeg == nearestNumberInPos - nearestNumberInPos * 2) {
+            if (nearestNumberInNeg == nearestNumberInPos - (nearestNumberInPos << 1)) {
 
                 System.out.println(nearestNumberInPos);
 
             } else {
 
-                if (nearestNumberInPos != 9999) {
+                if (nearestNumberInPos == 9999) {
 
-                    System.out.println(nearestNumberInPos);
+                    System.out.println(nearestNumberInNeg);
 
                 } else {
 
-                    System.out.println(nearestNumberInNeg);
+                    System.out.println(nearestNumberInPos);
 
                 }
 
