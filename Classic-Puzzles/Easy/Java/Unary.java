@@ -17,7 +17,7 @@ final class Solution {
 
         Character previous = '2';
 
-        for(final Character c : message.toCharArray()) {
+        for (final Character c : message.toCharArray()) {
 
             final StringBuilder binaryString = new StringBuilder(Integer.toBinaryString(c));
 
@@ -27,11 +27,11 @@ final class Solution {
 
             }
 
-            for (final Character cc : binaryString.toString().toCharArray()) {
+            for (final Character c2 : binaryString.toString().toCharArray()) {
 
-                if (cc != previous) {
+                if (c2 != previous) {
 
-                    if (cc == '0') {
+                    if (c2 == '0') {
 
                         encodedString.append(" 00 ");
 
@@ -45,7 +45,7 @@ final class Solution {
 
                 encodedString.append(0);
 
-                previous = cc;
+                previous = c2;
 
             }
 
