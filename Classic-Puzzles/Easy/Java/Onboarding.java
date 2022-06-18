@@ -23,5 +23,5 @@ final class Player {
         }
 
     }
-  
+
 }
