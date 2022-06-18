@@ -19,7 +19,7 @@ final class Player {
             for (int i = 0; i < 8; i++) {
 
                 final int mountainHeight = input.nextInt();
-                
+
                 if (mountainHeight > highestMountain) {
 
                     highestMountain = mountainHeight;
