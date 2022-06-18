@@ -11,11 +11,11 @@ final class Solution {
 
         final Scanner input = new Scanner(System.in);
 
-        final int a = input.nextInt();
-        final int b = input.nextInt();
-        final int c = input.nextInt();
+        final int profit = input.nextInt();
+        final int apartmentCosts = input.nextInt();
+        final int spending = input.nextInt();
 
-        if (a * 120 - c > b) {
+        if (profit * 120 - spending > apartmentCosts) {
 
             System.out.println("true");
 
