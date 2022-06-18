@@ -18,7 +18,7 @@ final class Player {
         final int exitFloor = input.nextInt();
         final int exitPosition = input.nextInt();
         final int amountClones = input.nextInt();
-        final int amountAdditionalElevators = input.nextInt();
+        final int amountExtraElevators = input.nextInt();
         final int amountElevators = input.nextInt();
 
         final HashMap<Integer, Integer> elevators = new HashMap<>();
@@ -73,5 +73,5 @@ final class Player {
         }
 
     }
-    
+
 }
